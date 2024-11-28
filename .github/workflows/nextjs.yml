@@ -50,6 +50,9 @@ jobs:
           fi
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
+      - name: Setup Next.js
+        id: setup-next
+        run: pnpm install -g next
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
