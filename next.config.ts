@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     // Configure pageExtensions to include md and mdx
     pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
     reactStrictMode: true,
+
+    // https://nextjs.org/docs/app/building-your-application/deploying/static-exports
+    output: "export",
 };
 
 // https://github.com/vercel/next.js/tree/canary/packages/next-mdx

@@ -13,10 +13,7 @@ export default async function Page({params}: {
     return postTsxFunction({});
 }
 
-export async function getStaticPaths() {
+export function generateStaticParams() {
     const paths = getAllPostsPath();
-    return {
-        paths,
-        fallback: false,
-    };
+    return paths.map(path => ({slug: path.params.id.replace("/posts/", "")}));
 }
