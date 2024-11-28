@@ -1,14 +1,15 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
     // https://github.com/vercel/next.js/tree/canary/packages/next-mdx
     // Configure pageExtensions to include md and mdx
-    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
     reactStrictMode: true,
 };
 
 // https://github.com/vercel/next.js/tree/canary/packages/next-mdx
-const withMDX = require('@next/mdx')({
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const withMDX = require("@next/mdx")({
     // Optionally provide remark and rehype plugins
     options: {
         // If you use remark-gfm, you'll need to use next.config.mjs
@@ -17,6 +18,6 @@ const withMDX = require('@next/mdx')({
         remarkPlugins: [],
         rehypePlugins: [],
     },
-})
+});
 
 export default withMDX(nextConfig);
