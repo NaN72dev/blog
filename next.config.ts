@@ -1,7 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    // https://github.com/vercel/next.js/tree/canary/packages/next-mdx
+    // Configure pageExtensions to include md and mdx
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    reactStrictMode: true,
 };
 
-export default nextConfig;
+// https://github.com/vercel/next.js/tree/canary/packages/next-mdx
+const withMDX = require('@next/mdx')({
+    // Optionally provide remark and rehype plugins
+    options: {
+        // If you use remark-gfm, you'll need to use next.config.mjs
+        // as the package is ESM only
+        // https://github.com/remarkjs/remark-gfm#install
+        remarkPlugins: [],
+        rehypePlugins: [],
+    },
+})
+
+export default withMDX(nextConfig);
