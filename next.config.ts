@@ -3,7 +3,7 @@ import type {NextConfig} from "next";
 const nextConfig: NextConfig = {
     // https://github.com/vercel/next.js/tree/canary/packages/next-mdx
     // Configure pageExtensions to include md and mdx
-    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    pageExtensions: ["ts", "tsx", "js", "jsx"],
     reactStrictMode: true,
 
     // https://nextjs.org/docs/app/building-your-application/deploying/static-exports
